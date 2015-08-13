@@ -1,8 +1,8 @@
 # GrapeSwaggerRails
 
-[![Build Status](https://travis-ci.org/BrandyMint/grape-swagger-rails.svg)](https://travis-ci.org/BrandyMint/grape-swagger-rails)
+[![Build Status](https://travis-ci.org/TinkerDev/grape-swagger-rails.svg)](https://travis-ci.org/TinkerDev/grape-swagger-rails)
 
-Swagger UI as Rails Engine for grape-swagger gem
+Swagger UI as Rails Engine for grape-swagger gem.
 
 ## Installation
 
@@ -19,6 +19,16 @@ And then execute:
 Or install it yourself as:
 
     $ gem install grape-swagger-rails
+
+## Compatibility
+
+GrapeSwaggerRails is compatible with the following versions of grape and grape-swagger.
+
+grape  | grape-swagger
+-------|--------------
+0.9.0  | 0.7.2
+0.9.0  | 0.8.0
+0.10.0 | 0.9.0
 
 ## Usage
 
@@ -94,13 +104,42 @@ end
 
 To update Swagger UI from its [distribution](https://github.com/wordnik/swagger-ui), run `bundle exec rake swagger_ui:dist:update`. Examine the changes carefully.
 
+NOTE: This action should be run part of this gem (not your application). In case if you want to
+make it up-to-date, clone the repo, run the rake task, examine the diff, fix any bugs, make sure
+tests pass and then send PR here.
+
+### Enabling in a Rails-API Project
+
+The grape-swagger-rails gem uses the Rails asset pipeline for its Javascript and CSS. Enable the asset pipeline with [rails-api](https://github.com/rails-api/rails-api).
+
+Add sprockets to `config/application.rb`.
+
+```ruby
+require 'sprockets/railtie'
+```
+
+Include JavaScript in `app/assets/javascripts/application.js`.
+
+```javascript
+//
+//= require_tree .
+```
+
+Include CSS stylesheets in `app/assets/stylesheets/application.css`.
+
+```css
+/*
+*= require_tree .
+*/
+```
+
 ## Contributors
 
 * [unloved](https://github.com/unloved)
 * [dapi](https://github.com/dapi)
 * [joelvh](https://github.com/joelvh)
 * [dblock](https://github.com/dblock)
-* ... and [more](https://github.com/BrandyMint/grape-swagger-rails/graphs/contributors) ...
+* ... and [more](https://github.com/TinkerDev/grape-swagger-rails/graphs/contributors) ...
 
 ## Contributing
 

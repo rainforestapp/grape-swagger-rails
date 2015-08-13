@@ -10,14 +10,16 @@ Gem::Specification.new do |spec|
   spec.email         = ['unlovedru@gmail.com']
   spec.description   = 'Swagger UI as Rails Engine for grape-swagger gem'
   spec.summary       = 'Swagger UI as Rails Engine for grape-swagger gem'
-  spec.homepage      = 'https://github.com/BrandyMint/grape-swagger-rails'
+  spec.homepage      = 'https://github.com/TinkerDev/grape-swagger-rails'
   spec.license       = 'MIT'
   spec.files         = `git ls-files`.split($/)
   spec.test_files    = `git ls-files spec`.split($/)
   spec.require_paths = %w(lib)
 
   spec.add_dependency 'railties', '>= 3.2.12'
-  spec.add_dependency 'grape-swagger'
+  # Remove grape-swagger dependency until new version is released.
+  # Use GitHub repo in main app in the meantime.
+  # spec.add_dependency 'grape-swagger'
 
   spec.add_development_dependency 'bundler', '~> 1.3'
   spec.add_development_dependency 'rake'
