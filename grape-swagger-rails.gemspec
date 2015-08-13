@@ -17,7 +17,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = %w(lib)
 
   spec.add_dependency 'railties', '>= 3.2.12'
-  spec.add_dependency 'grape-swagger', '>= 0.7.2'
+  # Remove grape-swagger dependency until new version is released.
+  # Use GitHub repo in main app in the meantime.
+  # spec.add_dependency 'grape-swagger'
 
   spec.add_development_dependency 'bundler', '~> 1.3'
   spec.add_development_dependency 'rake'
